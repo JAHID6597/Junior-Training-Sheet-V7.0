@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+bool cmp(const pair<string, int> &a, const pair<string, int> &b)
+{
+    return a.second > b.second;
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+    // freopen("input.txt", "r", stdin);
+    // freopen("output.txt", "w", stdout);
+
+    int t;
+    cin >> t;
+    
+    map<string, int> m;
+    map<string, int>::iterator it;
+    vector< pair<string, int> > vp;
+    
+    while(t--){
+        string s;
+        cin >> s;
+        m[s]++;
+    }
+
+    for (it = m.begin(); it != m.end(); it++)
+        vp.push_back({it->first, it->second});
+
+    sort(vp.begin(), vp.end(), cmp);
+
+    cout << vp[0].first << endl;
+
+    return 0;
+}
