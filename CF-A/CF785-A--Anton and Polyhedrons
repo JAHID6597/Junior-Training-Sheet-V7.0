@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+    /// freopen("input.txt", "r", stdin);
+    /// freopen("output.txt", "w", stdout);
+
+    long long te,x=0;
+    cin>>te;
+    string t = "Tetrahedron",
+           c = "Cube",
+           o = "Octahedron",
+           d = "Dodecahedron",
+           i = "Icosahedron";
+    while(te--){
+        string s;
+        cin>>s;
+        if(s == t)x += 4;
+        else if(s == c)x += 6;
+        else if(s == o)x += 8;
+        else if(s == d)x += 12;
+        else if(s == i)x += 20;
+    }
+    cout<<x<<endl;
+    return 0;
+}
